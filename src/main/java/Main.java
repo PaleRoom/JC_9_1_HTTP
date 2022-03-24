@@ -29,11 +29,11 @@ public class Main {
         List<CatAbout> catAbouts = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<CatAbout>>() {
         });
 
-        //catAbouts.forEach(System.out::println);
+
         System.out.println("Несколько фактов о кошках:");
 
         Stream<CatAbout> stream = catAbouts.stream()
-                .filter(value -> value.getUpvotes() > 0);
+                .filter(value -> value.getUpvotes() != null && Integer.parseInt(value.getUpvotes()) > 0);
 
         stream.forEach(p -> System.out.println("- " + p.getText()));
 

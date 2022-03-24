@@ -1,10 +1,22 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CatAbout {
 
+    @JsonProperty("id")
     public String id;
-    String text;
+
+    @JsonProperty("text")
+    public String text;
+
+    @JsonProperty("type")
     public String type;
+
+    @JsonProperty("user")
     public String user;
-    public int upvotes;
+
+    @JsonProperty("upvotes")
+    public String upvotes;
+
 
     public CatAbout() {
         // Пустой конструктор
@@ -26,11 +38,11 @@ public class CatAbout {
         return user;
     }
 
-    public int getUpvotes() {
+    public String getUpvotes() {
         return upvotes;
     }
 
-    public CatAbout(String id, String text, String type, String user, int upvotes) {
+    public CatAbout(String id, String text, String type, String user, String upvotes) {
         this.id = id;
         this.text = text;
         this.type = type;
