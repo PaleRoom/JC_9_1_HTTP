@@ -15,7 +15,7 @@ public class CatAbout {
     public String user;
 
     @JsonProperty("upvotes")
-    public String upvotes;
+    public Integer upvotes;
 
 
     public CatAbout() {
@@ -38,11 +38,11 @@ public class CatAbout {
         return user;
     }
 
-    public String getUpvotes() {
+    public Integer getUpvotes() {
         return upvotes;
     }
 
-    public CatAbout(String id, String text, String type, String user, String upvotes) {
+    public CatAbout(String id, String text, String type, String user, Integer upvotes) {
         this.id = id;
         this.text = text;
         this.type = type;
